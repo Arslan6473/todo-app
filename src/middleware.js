@@ -1,9 +1,9 @@
 import { auth } from "@/lib/auth";
 
-export function middleware(req) {
-  return auth(req);
+export default async function handler(req, res) {
+  return auth(req, res);
 }
 
 export const config = {
-  matcher: ["/protected-route/:path*"], 
+  runtime: "nodejs", 
 };
